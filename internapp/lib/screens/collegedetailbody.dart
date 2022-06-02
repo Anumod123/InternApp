@@ -177,7 +177,7 @@ class detailbody extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                             color: Color.fromARGB(255, 0, 44, 81)),
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
+                          padding: const EdgeInsets.only(bottom: 10.0),
                           child: ListTile(
                             title: Center(
                               child: Text(
