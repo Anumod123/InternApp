@@ -3,6 +3,7 @@ import 'package:internapp/screens/details/tabs/QandA.dart';
 import 'package:internapp/screens/details/tabs/aboutcollege.dart';
 import 'package:internapp/screens/details/tabs/events.dart';
 import 'package:internapp/screens/details/tabs/hostel.dart';
+import 'package:internapp/widgets/bars/bottomnavigator.dart';
 
 // this can later be converted into statefull widget and this body
 // can be used while fetching info from the cards
@@ -158,27 +159,42 @@ class detailbody extends StatelessWidget {
             ),
           ],
         ),
-        Positioned(
-            bottom: 10,
-            left: 10,
-            child: Container(
-              child: Container(
-                width: 340,
-                height: 40,
-                child: RaisedButton(
-                  color: Color.fromARGB(255, 0, 44, 81),
-                  onPressed: () {
-                    print("Applied");
-                  },
-                  child: Center(
-                      child: Text(
-                    "Apply Now",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w800),
-                  )),
-                ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                    color: Colors.transparent,
+                    elevation: 8,
+                    child: InkWell(
+                      onTap: () => {print("Pressed")},
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            color: Color.fromARGB(255, 0, 44, 81)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: ListTile(
+                            title: Center(
+                              child: Text(
+                                "Apply Now",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )),
               ),
-            ))
+            ],
+          ),
+        )
       ])),
     );
   }

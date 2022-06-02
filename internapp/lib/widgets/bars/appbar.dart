@@ -47,42 +47,47 @@ class customAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       ),
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(100),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 10, 20),
-          child: Row(
-            children: [
-              SizedBox(
-                width: 260,
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
-                    hintText: "   Search for colleges, school....",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(17)),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
+          preferredSize: Size.fromHeight(100),
+          child: Card(
+            elevation: 0,
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Row(
+                  children: [
+                    Flexible(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          hintText: "   Search for colleges, school....",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(17)),
+                          filled: true,
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: 52,
+                        height: 52,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15))),
+                        child: IconButton(
+                          icon: const Icon(Icons.mic),
+                          onPressed: () {},
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 52,
-                  height: 52,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                  child: IconButton(
-                    icon: const Icon(Icons.mic),
-                    onPressed: () {},
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+            ),
+          )),
       flexibleSpace: Container(
         decoration: BoxDecoration(
             color: Color.fromARGB(255, 0, 44, 81),

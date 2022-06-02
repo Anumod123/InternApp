@@ -25,7 +25,10 @@ Future<dynamic> modalButton(BuildContext context) {
                 Align(
                     alignment: Alignment.bottomRight,
                     child: FlatButton(
-                      onPressed: () => navbar(),
+                      onPressed: () {
+                        Navigator.pop(context,
+                            MaterialPageRoute(builder: (context) => navbar()));
+                      },
                       child: Icon(
                         Icons.close,
                       ),

@@ -14,23 +14,18 @@ class StartCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Stack(
-        children: [
-          Card(
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
             elevation: 0,
             child: InkWell(
               onTap: () => {modalButton(context)},
               child: Container(
-                height: 120,
-                width: 320,
+                height: 130,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(40)),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
                   image: DecorationImage(
                     image: AssetImage(cardImg),
                     fit: BoxFit.cover,
@@ -73,13 +68,13 @@ class StartCards extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 4,
-            right: 3,
-            child: count(),
-          ),
-        ],
-      ),
+        ),
+        Positioned(
+          bottom: 12,
+          right: 10,
+          child: count(),
+        ),
+      ],
     );
   }
 }
